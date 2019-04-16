@@ -7,7 +7,16 @@ services:
       - "3306:3306"
     links:
       - app 
+    networks:
+      - app-network
+      
   app:
     image: tienda:v1
     ports:
       - "8000:80"
+    network:
+      - app-network
+
+networks:
+    app-network:
+      driver: bridge
