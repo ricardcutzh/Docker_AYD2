@@ -8,18 +8,34 @@ services:
       - "--default-authentication-plugin=mysql_native_password"
     ports:
       - "3306:3306"
-    links:
-      - app 
     networks:
       - app-network
 
-  app:
+  app1:
     image: tienda:v1
-    container_name: tienda
+    container_name: tienda1
     ports:
       - "8000:80"
+    links:
+      - database
     networks:
       - app-network
+
+  app2:
+    image: tienda:v1
+    container_name: tienda2
+    ports:
+      - "8001:80"
+    links:
+      - database
+    networks:
+      - app-network
+  
+  proxy:
+    image: loadbalancer:v1
+    container_name: loadb
+    ports:
+      - "80:80"
 
 networks:
     app-network:
