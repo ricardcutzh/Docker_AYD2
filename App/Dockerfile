@@ -53,5 +53,6 @@ EXPOSE 80
 CMD ["cd","var/www/html/AYD2_TiendaEnLinea/", "&&", "git", "pull"]
 CMD ["a2enmod", "rewrite"]
 CMD ["service", "apache2", "restart"]
+CMD ["cd","var/www/html/AYD2_TiendaEnLinea/", "&&", "php", "artisan", "migrate"]
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
 # RUN composer install (en el directorio donde esta la app) | HABILITAR EL .ENV | generar la llave
