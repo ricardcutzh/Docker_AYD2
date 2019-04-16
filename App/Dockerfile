@@ -45,7 +45,7 @@ RUN rm /etc/apache2/apache2.conf
 COPY apache2.conf /etc/apache2/
 #CONFIGURACIONES FINALES
 RUN chown -R www-data:www-data /var/www/html/AYD2_TiendaEnLinea
-RUN chmod -R 755 /var/www/html/AYD2_TiendaEnLinea/storage
+RUN chmod -R 777 /var/www/html/AYD2_TiendaEnLinea/storage
 RUN a2enmod rewrite
 # EXPONER EL PUERTO 80
 EXPOSE 80
