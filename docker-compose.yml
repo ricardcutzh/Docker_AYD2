@@ -4,6 +4,8 @@ services:
   database:
     image: database:v1
     container_name: database
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
     ports:
       - "3306:3306"
     links:
