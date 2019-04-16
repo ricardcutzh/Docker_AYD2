@@ -36,6 +36,9 @@ services:
     container_name: loadb
     ports:
       - "80:80"
+    links:
+      - app1
+      - app2
 
 networks:
     app-network:
