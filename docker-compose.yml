@@ -39,6 +39,8 @@ services:
     links:
       - app1
       - app2
+    networks:
+      - app-network
 
 networks:
     app-network:
