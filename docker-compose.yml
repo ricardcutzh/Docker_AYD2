@@ -4,7 +4,9 @@ services:
   database:
     image: database:v1
     ports:
-      - "3306:3306" 
+      - "3306:3306"
+    links:
+      - app 
   app:
     image: tienda:v1
     ports:
