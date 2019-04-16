@@ -3,6 +3,7 @@ version: '3'
 services:
   database:
     image: database:v1
+    container_name: database
     ports:
       - "3306:3306"
     links:
@@ -12,6 +13,7 @@ services:
 
   app:
     image: tienda:v1
+    container_name: tienda
     ports:
       - "8000:80"
     networks:
