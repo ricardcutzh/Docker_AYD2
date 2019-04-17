@@ -15,7 +15,7 @@ services:
     build: ./App
     container_name: tienda1
     ports:
-      - "8000:80"
+      - "8001:80"
     links:
       - database
     depends_on:
@@ -27,7 +27,7 @@ services:
     build: ./App
     container_name: tienda2
     ports:
-      - "8000:80"
+      - "8002:80"
     links:
       - database
     depends_on:
@@ -39,7 +39,7 @@ services:
     build: ./App
     container_name: tienda3
     ports:
-      - "8000:80"
+      - "8003:80"
     links:
       - database
     depends_on:
@@ -51,7 +51,7 @@ services:
     build: ./App
     container_name: tienda4
     ports:
-      - "8000:80"
+      - "8004:80"
     links:
       - database
     depends_on:
