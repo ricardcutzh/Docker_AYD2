@@ -16,7 +16,7 @@ services:
     container_name: tienda1
     command:
       - /bin/bash
-      - "cd / && sh init.sh"
+      - echo 'hola'
     ports:
       - "8000:80"
     links:
@@ -29,7 +29,7 @@ services:
     container_name: tienda2
     command:
       - /bin/bash
-      - "cd / && sh init.sh"
+      - echo 'hola'
     ports:
       - "8001:80"
     links:
