@@ -35,7 +35,7 @@ services:
     networks:
       - app-network
   
-  app2:
+  app3:
     build: ./App
     container_name: tienda3
     ports:
