@@ -15,7 +15,7 @@ services:
     build: ./App
     container_name: tienda1
     command:
-      - "sh init.sh"
+      - "cd / && sh init.sh"
     ports:
       - "8000:80"
     links:
@@ -27,7 +27,7 @@ services:
     build: ./App
     container_name: tienda2
     command:
-      - "sh init.sh"
+      - "cd / && sh init.sh"
     ports:
       - "8001:80"
     links:
