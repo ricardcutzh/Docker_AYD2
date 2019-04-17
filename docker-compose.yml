@@ -47,6 +47,18 @@ services:
     networks:
       - app-network
   
+  app4:
+    build: ./App
+    container_name: tienda4
+    ports:
+      - "8003:80"
+    links:
+      - database
+    depends_on:
+      - database
+    networks:
+      - app-network
+  
   proxy:
     build: ./LoadBalancer
     container_name: loadb
@@ -56,10 +68,12 @@ services:
       - app1
       - app2
       - app3
+      - app4
     depends_on:
       - app1
       - app2
       - app3
+      - app4
     networks:
       - app-network
 
