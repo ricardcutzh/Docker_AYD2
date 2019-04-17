@@ -14,9 +14,7 @@ services:
   app1:
     build: ./App
     container_name: tienda1
-    command:
-      - /bin/bash
-      - echo 'hola'
+    entrypoint: [sh, init.sh]
     ports:
       - "8000:80"
     links:
@@ -27,9 +25,7 @@ services:
   app2:
     build: ./App
     container_name: tienda2
-    command:
-      - /bin/bash
-      - echo 'hola'
+    entrypoint: [sh, init.sh]
     ports:
       - "8001:80"
     links:
