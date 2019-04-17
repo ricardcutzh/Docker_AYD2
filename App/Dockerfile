@@ -51,6 +51,7 @@ RUN a2enmod rewrite
 EXPOSE 80
 # RUNNING SH SCRIPT
 COPY init.sh .
+RUN chmod 777 init.sh
 CMD ["./init.sh"]
 # Launch Apache
 #CMD ["cd","var/www/html/AYD2_TiendaEnLinea/", "&&", "git", "pull"]
