@@ -18,6 +18,8 @@ services:
       - "8000:80"
     links:
       - database
+    depends_on:
+      - database
     networks:
       - app-network
 
@@ -28,6 +30,8 @@ services:
       - "8001:80"
     links:
       - database
+    depends_on:
+      - database
     networks:
       - app-network
   
@@ -37,6 +41,9 @@ services:
     ports:
       - "80:80"
     links:
+      - app1
+      - app2
+    depends_on:
       - app1
       - app2
     networks:
