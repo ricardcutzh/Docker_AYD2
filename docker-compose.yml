@@ -35,6 +35,18 @@ services:
     networks:
       - app-network
   
+  app2:
+    build: ./App
+    container_name: tienda3
+    ports:
+      - "8002:80"
+    links:
+      - database
+    depends_on:
+      - database
+    networks:
+      - app-network
+  
   proxy:
     build: ./LoadBalancer
     container_name: loadb
@@ -43,9 +55,11 @@ services:
     links:
       - app1
       - app2
+      - app3
     depends_on:
       - app1
       - app2
+      - app3
     networks:
       - app-network
 
