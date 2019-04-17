@@ -1,9 +1,12 @@
 #!/bin/bash
 echo "Iniciando configuracion de contenedor"
-cd var/www/html/AYD2_TiendaEnLinea/ && git pull
+echo "... apache ..."
 a2enmod rewrite
 service apache2 restart
-cd var/www/html/AYD2_TiendaEnLinea/ && php artisan migrate
-cd var/www/html/AYD2_TiendaEnLinea/ && php artisan db:seed
+echo "... TIENDA ..."
+cd var/www/html/AYD2_TiendaEnLinea/ && git pull
+php artisan migrate
+php artisan db:seed
+echo "... FOREGROUD ..."
 /usr/sbin/apache2ctl -DFOREGROUND
 echo "finalizo las configuraciones"
